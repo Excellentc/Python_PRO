@@ -22,7 +22,7 @@
 
 user_age = input('Input your age, only numbers please: ')
 if not user_age.isdigit():
-    print('You entered an invalid value. Try again. Input only numbers .')
+    print('You entered an invalid value. Try again. Input only numbers.')
 else:
     user_age_int = int(user_age)                      # Cмена типа для переменной, для будущих арифметических сравнений
     if user_age.find('7') >= 0:                       # Проверка условия есть ли 7 рка в возрасте
