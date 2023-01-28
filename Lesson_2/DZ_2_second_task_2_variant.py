@@ -9,7 +9,7 @@
 
 user_age = input('Input your age, only numbers please: ')
 if not user_age.isdigit():
-    print('You entered an invalid value. Try again. Input only one number .')
+    print('You entered an invalid value. Try again. Input only one numbers .')
 else:
     lucky_guy_msg = 'You are will be lucky today!'      # присвоение переменной для счастливчика
     user_age_int = int(user_age)                        # смена типа для переменной, для будущих сравнений
