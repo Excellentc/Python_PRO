@@ -22,6 +22,6 @@ else:
     elif 16 <= user_age_int <= 65:                      # Проверка условия 16 <= x <= 65
         print(f'There are no more tickets! {lucky_guy_msg}')
     elif 65 < user_age_int < 105:                       # Проверка условия 65 < x < 105
-        print(f' {lucky_guy_msg} Show your pension certificate! ')
+        print(f'{lucky_guy_msg} Show your pension certificate! ')
     elif user_age_int == 0 or user_age_int >= 105:      # Проверка граничных условий: если введен 0 или >= 105 лет
         print("Liar. People Don't live with this age")
