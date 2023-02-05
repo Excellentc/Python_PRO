@@ -38,7 +38,6 @@ def filter_list(data_dict, low_limit, upp_limit):
     for key, value in data_dict.items():
         if low_limit < value < upp_limit:
             string_list.append(key)
-            string_list.reverse()
     return string_list
 
 
