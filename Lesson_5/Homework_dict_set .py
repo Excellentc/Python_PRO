@@ -20,13 +20,13 @@
 # cities_was_input = "киев Харьков львов ОДЕССА Париж париж парИж"
 # cities_was_not_input = "Копенгаген  Днепр Харьков Малая_Прихватка Конские_Раздоры паРиж "
 
-cities_was_input = str(input("Enter cities where you have been for 10 years (through a space)"))
+cities_was_input = input("Enter cities where you have been for 10 years (through a space)")
 cities_was_set = set(list(cities_was_input.title().split(" ")))
 
-cities_was_not_input = str(input("Enter cities which you want to visit in next 10 years (through a space)"))
+cities_was_not_input = input("Enter cities which you want to visit in next 10 years (through a space)")
 cities_was_not_set = set(list(cities_was_not_input.title().split(" ")))
 
-match_cities = list(cities_was_set.intersection(cities_was_not_set))
+match_cities = cities_was_set.intersection(cities_was_not_set)
 if len(match_cities) > 0:
     print("\33[32m Apparently, you liked the cities - \33[0m"+", ".join(match_cities) +
           "\33[32m , since you want to visit there again\33[0m")
@@ -74,10 +74,10 @@ student = {
 }
 
 new_student_data = {
-        'Пошта': 'serg_1@gmail.com',
-        'Вік': 22,
-        'Номер телефону': None,
-        'Середній бал': 96.4
+    'Пошта': 'serg_1@gmail.com',
+    'Вік': 22,
+    'Номер телефону': None,
+    'Середній бал': 96.4
     }
 student["Сергей Куч"] = new_student_data
 
