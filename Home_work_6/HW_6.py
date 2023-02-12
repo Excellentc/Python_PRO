@@ -36,7 +36,7 @@ def start_homework(value_one, value_two):
     return result_to_print
 
 
-pr_screen= start_homework(5, 5)
+pr_screen = start_homework(5, 5)
 print(pr_screen)
 
 """Візьміть попереднє дз "Касир в кінотеатрі" і перепишіть за допомогою функцій. Памʼятайте про SRP!"""
@@ -52,73 +52,73 @@ print(pr_screen)
         """
 
 
-# def color_output_green(sentence):
-#     start_green = "\33[32m"
-#     end_green = "\33[0m"
-#     new_sentence = start_green + sentence + end_green
-#     return new_sentence
-#
-#
-# def color_output_red(sentence):
-#     start_red = "\33[31m"
-#     end_red = "\33[0m"
-#     new_sentence = start_red + sentence + end_red
-#     return new_sentence
-#
-#
-# def color_output_blue(sentence):
-#     start_blue = "\33[34m"
-#     end_blue = "\33[0m"
-#     new_sentence = start_blue + sentence + end_blue
-#     return new_sentence
-#
-#
-# def check_luck(user_input_str):
-#     if user_input_str.find('7') >= 0:
-#         lucky_sentence = 'You are will be lucky today!'
-#         lucky_guy_msg = color_output_blue(sentence=lucky_sentence)
-#     else:
-#         lucky_guy_msg = ''
-#     return lucky_guy_msg
-#
-#
-# def check_user_age(user_input_int, check__lucky):
-#     lucky_or_not = check_luck(user_input_str=check__lucky)
-#     output_message = ""
-#     if 0 < user_input_int < 7:
-#         output_message = 'Where are your parents? '
-#     elif 7 <= user_input_int < 16:
-#         output_message = "This is an adult movie! " + lucky_or_not
-#     elif 16 <= user_input_int <= 65:
-#         output_message = "There are no more tickets! " + lucky_or_not
-#     elif 65 < user_input_int < 105:
-#         output_message = "Show your pension certificate! " + lucky_or_not
-#     elif user_input_int == 0 or user_input_int >= 105:
-#         negative_value = "Liar. People Don't live with this age "
-#         output_message_color = color_output_red(sentence=negative_value)
-#         return output_message_color
-#     output_message_color = color_output_green(sentence=output_message)
-#     return output_message_color
-#
-#
-# def start_homework():
-#     while True:
-#         try:
-#             user_input = input("\33[32mInput your age, only numbers please: \33[0m")
-#             user_input_int_ = abs(int(user_input))
-#         except ValueError:
-#             bad_attempt = color_output_red("Wrong input. Let's do this again")
-#             print(bad_attempt)
-#         else:
-#             print(f"\33[32mGood input\33[0m You age is : {user_input_int_}")
-#             result_to_print = check_user_age(user_input_int=user_input_int_, check__lucky=user_input)
-#             print(result_to_print)
-#             print()
-#             new_attempt = input("Want to repeat this ? Input Yes ")
-#             if new_attempt == 'Yes' or new_attempt == 'yes' or new_attempt == 'y' or new_attempt == 'Y':
-#                 continue
-#             print("By")
-#             break
-#
-#
-# start_homework()
+def color_output_green(sentence):
+    start_green = "\33[32m"
+    end_green = "\33[0m"
+    new_sentence = start_green + sentence + end_green
+    return new_sentence
+
+
+def color_output_red(sentence):
+    start_red = "\33[31m"
+    end_red = "\33[0m"
+    new_sentence = start_red + sentence + end_red
+    return new_sentence
+
+
+def color_output_blue(sentence):
+    start_blue = "\33[34m"
+    end_blue = "\33[0m"
+    new_sentence = start_blue + sentence + end_blue
+    return new_sentence
+
+
+def check_luck(user_input_str):
+    if user_input_str.find('7') >= 0:
+        lucky_sentence = 'You are will be lucky today!'
+        lucky_guy_msg = color_output_blue(sentence=lucky_sentence)
+    else:
+        lucky_guy_msg = ''
+    return lucky_guy_msg
+
+
+def check_user_age(user_input_int, check__lucky):
+    lucky_or_not = check_luck(user_input_str=check__lucky)
+    output_message = ""
+    if 0 < user_input_int < 7:
+        output_message = 'Where are your parents? '
+    elif 7 <= user_input_int < 16:
+        output_message = "This is an adult movie! " + lucky_or_not
+    elif 16 <= user_input_int <= 65:
+        output_message = "There are no more tickets! " + lucky_or_not
+    elif 65 < user_input_int < 105:
+        output_message = "Show your pension certificate! " + lucky_or_not
+    elif user_input_int == 0 or user_input_int >= 105:
+        negative_value = "Liar. People Don't live with this age "
+        output_message_color = color_output_red(sentence=negative_value)
+        return output_message_color
+    output_message_color = color_output_green(sentence=output_message)
+    return output_message_color
+
+
+def start_homework():
+    while True:
+        try:
+            user_input = input("\33[32mInput your age, only numbers please: \33[0m")
+            user_input_int_ = abs(int(user_input))
+        except ValueError:
+            bad_attempt = color_output_red("Wrong input. Let's do this again")
+            print(bad_attempt)
+        else:
+            print(f"\33[32mGood input\33[0m You age is : {user_input_int_}")
+            result_to_print = check_user_age(user_input_int=user_input_int_, check__lucky=user_input)
+            print(result_to_print)
+            print()
+            new_attempt = input("Want to repeat this ? Input Yes ")
+            if new_attempt == 'Yes' or new_attempt == 'yes' or new_attempt == 'y' or new_attempt == 'Y':
+                continue
+            print("By")
+            break
+
+
+start_homework()
