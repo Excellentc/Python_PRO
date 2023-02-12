@@ -26,7 +26,7 @@ def start_homework(list_to_check):
 
     if type(list_to_check[0]) == bool or type(list_to_check[1]) == bool:
         result_to_print = "Not correct input values"
-    elif list_to_check[0] == None or list_to_check[1] == None:
+    elif list_to_check[0] is None or list_to_check[1] is None:
         result_to_print = "Not correct input values"
     elif list_to_check[0].isalpha() and list_to_check[1].isalpha():
         result_to_print = two_words(list_input=list_to_check)
