@@ -52,31 +52,17 @@ print(pr_screen)
         """
 
 
-def color_output_green(sentence):
-    start_green = "\33[32m"
-    end_green = "\33[0m"
-    new_sentence = start_green + sentence + end_green
-    return new_sentence
-
-
-def color_output_red(sentence):
-    start_red = "\33[31m"
-    end_red = "\33[0m"
-    new_sentence = start_red + sentence + end_red
-    return new_sentence
-
-
-def color_output_blue(sentence):
-    start_blue = "\33[34m"
-    end_blue = "\33[0m"
-    new_sentence = start_blue + sentence + end_blue
+def color_output(sentence, color):
+    start_color = "\33["+color+"m"
+    end_color = "\33[0m"
+    new_sentence = start_color + sentence + end_color
     return new_sentence
 
 
 def check_luck(user_input_str):
     if user_input_str.find('7') >= 0:
         lucky_sentence = 'You are will be lucky today!'
-        lucky_guy_msg = color_output_blue(sentence=lucky_sentence)
+        lucky_guy_msg = color_output(sentence=lucky_sentence, color="34")
     else:
         lucky_guy_msg = ''
     return lucky_guy_msg
@@ -95,9 +81,9 @@ def check_user_age(user_input_int, check__lucky):
         output_message = "Show your pension certificate! " + lucky_or_not
     elif user_input_int == 0 or user_input_int >= 105:
         negative_value = "Liar. People Don't live with this age "
-        output_message_color = color_output_red(sentence=negative_value)
+        output_message_color = color_output(sentence=negative_value, color="31")
         return output_message_color
-    output_message_color = color_output_green(sentence=output_message)
+    output_message_color = color_output(sentence=output_message, color="32")
     return output_message_color
 
 
@@ -107,7 +93,7 @@ def start_homework():
             user_input = input("\33[32mInput your age, only numbers please: \33[0m")
             user_input_int_ = abs(int(user_input))
         except ValueError:
-            bad_attempt = color_output_red("Wrong input. Let's do this again")
+            bad_attempt = color_output("Wrong input. Let's do this again", color="31")
             print(bad_attempt)
         else:
             print(f"\33[32mGood input\33[0m You age is : {user_input_int_}")
