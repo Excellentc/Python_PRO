@@ -7,17 +7,17 @@
 """
 
 
-def two_numbers(value_one_check, value_two_check):
+def multiplication_of_two_arguments(value_one_check, value_two_check):
     result_numbers = value_one_check * value_two_check
     return result_numbers
 
 
-def two_words(value_one_check, value_two_check):
+def joining_two_words(value_one_check, value_two_check):
     result_words = value_one_check + value_two_check
     return result_words
 
 
-def olive_word_number(value_one_check, value_two_check):
+def creating_a_tuple_with_data_matching_the_third_condition(value_one_check, value_two_check):
     tuple_to_output = (value_one_check, value_two_check,)
     return tuple_to_output
 
@@ -25,19 +25,19 @@ def olive_word_number(value_one_check, value_two_check):
 def start_homework(value_one, value_two):
 
     if (type(value_one) == int or type(value_one) == float) and (type(value_two) == int or type(value_two) == float):
-        result_to_print = two_numbers(value_one_check=value_one, value_two_check=value_two)
+        result_to_print = multiplication_of_two_arguments(value_one_check=value_one, value_two_check=value_two)
     else:
         try:
             list_value_1, list_value_2 = value_one.isalpha(), value_two.isalpha()
-            result_to_print = two_words(value_one_check=value_one, value_two_check=value_two)
+            result_to_print = joining_two_words(value_one_check=value_one, value_two_check=value_two)
         except AttributeError:
-            result_to_print = olive_word_number(value_one_check=value_one, value_two_check=value_two)
+            result_to_print = creating_a_tuple_with_data_matching_the_third_condition(value_one_check=value_one,
+                                                                                      value_two_check=value_two)
+    pass
 
-    return result_to_print
 
+start_homework(5, 5)
 
-pr_screen = start_homework(5, 5)
-print(pr_screen)
 
 """Візьміть попереднє дз "Касир в кінотеатрі" і перепишіть за допомогою функцій. Памʼятайте про SRP!"""
 
@@ -90,16 +90,18 @@ def check_user_age(user_input_int, check__lucky):
 def start_homework():
     while True:
         try:
-            user_input = input("\33[32mInput your age, only numbers please: \33[0m")
+            data_entry_suggestion = "Input your age, only numbers please: "
+            user_input = input(color_output(sentence=data_entry_suggestion, color="32"))
             user_input_int_ = abs(int(user_input))
         except ValueError:
             bad_attempt = color_output("Wrong input. Let's do this again", color="31")
             print(bad_attempt)
         else:
-            print(f"\33[32mGood input\33[0m You age is : {user_input_int_}")
+            successful_input = "Good input: "
+            output_successful_input = color_output(sentence=successful_input, color="32")
+            print(output_successful_input, f"You age is : {user_input_int_}")
             result_to_print = check_user_age(user_input_int=user_input_int_, check__lucky=user_input)
-            print(result_to_print)
-            print()
+            print(result_to_print, end="\n\n")
             new_attempt = input("Want to repeat this ? Input Yes ")
             if new_attempt == 'Yes' or new_attempt == 'yes' or new_attempt == 'y' or new_attempt == 'Y':
                 continue
