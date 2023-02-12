@@ -7,60 +7,37 @@
 """
 
 
-def two_numbers(list_input):
-    result_numbers = float(list_input[0]) * float(list_input[1])
+def two_numbers(value_one_check, value_two_check):
+    result_numbers = value_one_check * value_two_check
     return result_numbers
 
 
-def two_words(list_input):
-    result_words = list_input[0] + list_input[1]
+def two_words(value_one_check, value_two_check):
+    result_words = value_one_check + value_two_check
     return result_words
 
 
-def olive_word_number(list_input):
-    tuple_to_output = (list_input[0], list_input[1],)
+def olive_word_number(value_one_check, value_two_check):
+    tuple_to_output = (value_one_check, value_two_check,)
     return tuple_to_output
 
 
-def start_homework(list_to_check):
+def start_homework(value_one, value_two):
 
-    if type(list_to_check[0]) == bool or type(list_to_check[1]) == bool:
-        result_to_print = "Not correct input values"
-    elif list_to_check[0] is None or list_to_check[1] is None:
-        result_to_print = "Not correct input values"
-    elif list_to_check[0].isalpha() and list_to_check[1].isalpha():
-        result_to_print = two_words(list_input=list_to_check)
+    if (type(value_one) == int or type(value_one) == float) and (type(value_two) == int or type(value_two) == float):
+        result_to_print = two_numbers(value_one_check=value_one, value_two_check=value_two)
     else:
         try:
-            list_value_1, list_value_2 = float(list_to_check[0]), float(list_to_check[1])
-        except ValueError:
-            result_to_print = olive_word_number(list_input=list_to_check)
-        else:
-            result_to_print = two_numbers(list_input=list_to_check)
+            list_value_1, list_value_2 = value_one.isalpha(), value_two.isalpha()
+            result_to_print = two_words(value_one_check=value_one, value_two_check=value_two)
+        except AttributeError:
+            result_to_print = olive_word_number(value_one_check=value_one, value_two_check=value_two)
 
     return result_to_print
 
 
-two_words_two_numbers = ["one", "two"]
-result = start_homework(list_to_check=two_words_two_numbers)
-print(f"Values {two_words_two_numbers}", result)
-
-two_words_two_numbers = ["2", "2.5"]
-result = start_homework(list_to_check=two_words_two_numbers)
-print(f"Values {two_words_two_numbers}", result)
-
-two_words_two_numbers = [True, "2"]
-result = start_homework(list_to_check=two_words_two_numbers)
-print(f"Values {two_words_two_numbers}", result)
-
-two_words_two_numbers = [None, "2"]
-result = start_homework(list_to_check=two_words_two_numbers)
-print(f"Values {two_words_two_numbers}", result)
-
-two_words_two_numbers = ["23.6", "two"]
-result = start_homework(list_to_check=two_words_two_numbers)
-print(f"Values {two_words_two_numbers}", result)
-
+pr_screen= start_homework(5, 5)
+print(pr_screen)
 
 """Візьміть попереднє дз "Касир в кінотеатрі" і перепишіть за допомогою функцій. Памʼятайте про SRP!"""
 
