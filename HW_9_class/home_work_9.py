@@ -6,15 +6,6 @@
 """
 
 
-# def green_wiki(wiki_string_data):
-#     def _wrapper(*args, **kwargs):
-#         start_color = "\33[32m"
-#         end_color = "\33[0m"
-#         function_result = wiki_string_data(*args, **kwargs)
-#         color_wiki_string = start_color + function_result + end_color
-#         return color_wiki_string
-#
-#     return _wrapper
 def green_wiki(color_number="32"):
     def decorate(wiki_string_data):
         def _wrapper(*args, **kwargs):
@@ -26,6 +17,7 @@ def green_wiki(color_number="32"):
 
         return _wrapper
     return decorate
+
 
 class Vehicle:
     min_team = 1
