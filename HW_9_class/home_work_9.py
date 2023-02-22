@@ -18,9 +18,9 @@ def green_wiki(wiki_string_data):
 
 
 class Vehicle:
-    min_team = 0
-    max_team = 0
-    max_speed = 0
+    min_team = 1
+    max_team = 80
+    max_speed = 600
 
     @green_wiki
     def short_information(self):
@@ -31,7 +31,6 @@ class Vehicle:
 class Car(Vehicle):
     application_area = "Earth"
     min_speed = 5
-
 
     @green_wiki
     def short_information(self):
@@ -44,7 +43,6 @@ class Car(Vehicle):
 class Airplane(Vehicle):
     application_area = "Air"
     min_speed = 90
-
 
     @green_wiki
     def short_information(self):
@@ -59,7 +57,6 @@ class Boat(Vehicle):
     application_area = "Water"
     min_speed = 5
 
-
     @green_wiki
     def short_information(self):
         wikipedia = f'The ship is designed to ensure the transportation of people and goods by water using the laws \n' \
@@ -67,7 +64,6 @@ class Boat(Vehicle):
         return wikipedia
 
 
-prototype_vehicle = Vehicle()
 air_vehicle = Airplane()
 water_vehicle = Boat()
 earth_vehicle = Car()
