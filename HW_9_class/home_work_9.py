@@ -90,9 +90,13 @@ class Boat(Vehicle):
 
     @color_wiki("35")
     def __str__(self):
+        if self.installing_weapon is True:
+            self.weapon_info = "Equipped with anti-ship torpedoes and ground-to-air missiles for air defense"
+        else:
+            self.weapon_info = ""
         wikipedia = f'The ship is designed to ensure the transportation of people and goods by water using the\n' \
                     f'laws of Archimedes. They may achieve max speed over {self.max_speed} kl/h and moved by ' \
-                    f'{self.application_area}. '
+                    f'{self.application_area}.  \n{self.weapon_info}  '
         return wikipedia
 
     __repr__ = __str__
@@ -100,5 +104,4 @@ class Boat(Vehicle):
 
 first_earth_vehicle = Car(250, 1, "Earth", 320, False, "Formula 1")
 first_air_vehicle = Airplane(75.5, 3, "Air", 120, True, "Bomber")
-first_water_vehicle = Boat(35, 5, "Water", 60, False, "Fishing boat", 24)
-
+first_water_vehicle = Boat(35, 1, "Water", 60, True, "Border boat", 5)
