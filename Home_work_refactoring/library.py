@@ -3,7 +3,7 @@ from functools import wraps
 from random import choice, randint, random
 
 
-def check_invalid_input_data(func):
+def raise_invalid_input_data(func):
     @wraps(func)
     def _wrapper(*args, **kwargs):
         values = [*args]
@@ -20,29 +20,17 @@ def check_invalid_input_data(func):
 
 def get_random_number() -> int:
     """
-    Function generate a floating point number. Number output is modulo with type change to 'int'
-    Returns: int
-
+    We generate a floating point number. The output of the number is carried out modulo with a type change to 'int'
     """
     result = int(abs(random() * randint(-5 ** 5, 5 ** 5)))
     return result
 
 
-@check_invalid_input_data
+@raise_invalid_input_data
 def random_string_generation(string_len: int = 10) -> str:
     """
-    Function accepts values(string_len) of 'int' type and creates a string variable, in which number of
-    letters == string_len. All letters are lowercase.
-    Args:
-        string_len: int
-    By default string_len == 10
-    Returns: string
-
+    We accept a value (string_len) of type 'int' and create a string variable in which the number
+    of letters == string_len. All letters are lowercase.
     """
     generated_string = ''.join(choice(string.ascii_lowercase) for i in range(string_len))
     return generated_string
-
-
-get_random_number()
-random_string_generation(20)
-random_string_generation(get_random_number())
