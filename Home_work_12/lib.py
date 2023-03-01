@@ -7,6 +7,8 @@
 
 class Point:
     def __init__(self, x_coord, y_coord):
+        self._x = None
+        self._y = None
         self.x = x_coord
         self.y = y_coord
 
@@ -17,9 +19,8 @@ class Point:
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
-            raise TypeError('X not INT')
-        else:
-            self._x = value
+            raise TypeError('X coordinate should be an integer')
+        self._x = value
 
     @property
     def y(self):
@@ -28,9 +29,8 @@ class Point:
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
-            raise TypeError('Y not INT')
-        else:
-            self._y = value
+            raise TypeError('Y coordinate should be an integer')
+        self._y = value
 
 
 class Line:
@@ -52,21 +52,33 @@ class Line:
         return res
 
     def __gt__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length > other.length
 
     def __lt__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length < other.length
 
     def __ne__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length != other.length
 
     def __eq__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length == other.length
 
     def __le__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length <= other.length
 
     def __ge__(self, other):
+        if not isinstance(other, Line):
+            raise TypeError('Line_variable is not an instance of Line_class')
         return self.length >= other.length
 
 
