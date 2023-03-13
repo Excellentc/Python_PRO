@@ -1,5 +1,5 @@
-from library import Mobile, Notebook
 import pytest
+from library import Mobile, Notebook
 
 
 @pytest.fixture(scope='class')
