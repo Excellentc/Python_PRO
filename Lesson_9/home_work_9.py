@@ -105,3 +105,10 @@ class Boat(Vehicle):
 first_earth_vehicle = Car(250, 1, "Earth", 320, False, "Formula 1")
 first_air_vehicle = Airplane(75.5, 3, "Air", 120, True, "Bomber")
 first_water_vehicle = Boat(35, 1, "Water", 60, True, "Border boat", 5)
+
+print(first_earth_vehicle.__str__)
+print(first_air_vehicle.__repr__)
+print(first_water_vehicle.__repr__)
+cd = Vehicle (230,25)
+print(cd.__repr__)
+print()
